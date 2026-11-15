@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actor Portfolio 04</title>
+<style>html,body{margin:0} body{font-family:Inter,Arial, sans-serif;background:#151a22;color:#e8f0f8}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #2a3240}
+.player{margin:16px 0;height:260px;background:#0e111b;border-radius:12px;position:relative;overflow:hidden}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:#4cd1c3;border:0;cursor:pointer}
+.card{background:#1e2230;border-radius:12px;padding:14px}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+.floater{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.25);padding:6px 10px;border-radius:6px;animation:float 3s ease-in-out infinite}
+@media (max-width:700px){ .player{height:180px} }
+</style></head>
+<body>
+<header class="header container"><div>Actor Studio</div><button id="shuffle">Shuffle</button></header>
+<main class="container">
+  <section class="player" aria-label="Video placeholder">
+    <button class="play" aria-label="Play"></button>
+    <div class="floater">Reel Preview</div>
+  </section>
+  <section class="grid" aria-label="Info">
+    <article class="card"><h3>Overview</h3><p>Brief bio and strengths.</p></article>
+    <article class="card"><h3>Upcoming</h3><p>Planned appearances and auditions.</p></article>
+  </section>
+</main>
+<footer class="container" style="opacity:.7">© 2026 Actor Portfolio</footer>
+<script>
+(function(){
+  const p=document.querySelector('.play');
+  p.addEventListener('click',()=>{ alert('Playing reel… (simulated)'); });
+  const btn=document.getElementById('shuffle');
+  btn.addEventListener('click',()=>{ document.body.animate([{opacity:.5},{opacity:1}],{duration:600}); });
+})();
+</script>
+</body>
+</html>
